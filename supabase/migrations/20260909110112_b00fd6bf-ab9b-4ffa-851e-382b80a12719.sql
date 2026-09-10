@@ -1,0 +1,13 @@
+REVOKE EXECUTE ON FUNCTION public.assign_unassigned_to_outlet(uuid) FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.count_unassigned_records() FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.product_availability(text) FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.get_user_outlet(uuid) FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.process_sale(uuid, text, text, numeric, numeric, text, uuid, jsonb, uuid, uuid, text, timestamptz) FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.set_outlet_from_profile() FROM anon, public, authenticated;
+REVOKE EXECUTE ON FUNCTION public.apply_movement_to_outlet_stock() FROM anon, public, authenticated;
+REVOKE EXECUTE ON FUNCTION public.trg_first_outlet_assign() FROM anon, public, authenticated;
+GRANT EXECUTE ON FUNCTION public.assign_unassigned_to_outlet(uuid) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION public.count_unassigned_records() TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION public.product_availability(text) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION public.get_user_outlet(uuid) TO authenticated, service_role;
+GRANT EXECUTE ON FUNCTION public.process_sale(uuid, text, text, numeric, numeric, text, uuid, jsonb, uuid, uuid, text, timestamptz) TO authenticated, service_role;
